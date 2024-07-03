@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -96,37 +96,37 @@ class _MyAppState extends State<MyApp> {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                             
-                            Checkbox(
-                              value: ischeck, 
-                             // title: Text('remember me'),
-                              onChanged: (bool? newValue){
-                                setState(() {
-                                  ischeck = newValue;
-                                });
-                              },
-                              activeColor: Colors.orangeAccent,
-                              checkColor: Colors.white, 
-                              ),
-
-                              
+                          children:[
+                            RememberMeCheckbox(),
+                            Text(
+                              'forgot password',
+                              style: TextStyle(fontSize: 16, color: Colors.teal),
+                              textAlign: TextAlign.end,
+                            ),
                           ],
-                          
                       ),
 
-                     
-
+                        
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 35),
                         child: MaterialButton(
                           onPressed: () {},
-                          child: Text('Login'),
+                          minWidth: 222.0,
+                          height: 35.0,
+                          child: Text('Login Now'),
                           color: Colors.green,
                           textColor: Colors.white,
+                          
                           ),
+
                       ),
                 
+                     SignInButton(
+                      Buttons.Google,
+                      text: "Connect with Google",
+                      onPressed: () {},
+                    )
+
                     ],
                   ),
                 ),
@@ -140,3 +140,29 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+class RememberMeCheckbox extends StatefulWidget {
+  @override
+  _RememberMeCheckboxState createState() => _RememberMeCheckboxState();
+}
+
+class _RememberMeCheckboxState extends State<RememberMeCheckbox> {
+  bool _rememberMe = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Checkbox(
+          value: _rememberMe,
+          onChanged: (bool? value) {
+            setState(() {
+              _rememberMe = value!;
+            });
+          },
+        ),
+        Text('Remember me'),
+      ],
+    );
+  }
+}
