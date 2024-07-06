@@ -1,33 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:login/pages/about.dart';
-import 'package:login/pages/intro.dart';
-// import 'package:flutter_signin_button/flutter_signin_button.dart';
+
+
 //import 'package:login/pages/about.dart';
+import 'package:flutter/material.dart';
+//import 'package:login/pages/intro.dart';
 
-void main() {
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class IntroPage extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: const IntroPage(),
-      routes: {
-        '/AboutPage':(context) => const AboutPage(),
-      },
-    );
-  }
-}
-
-/*
-class _MyAppState extends State<MyApp> {
-                     
-   bool? ischeck = false;
+  const IntroPage({super.key});                   
+   
+ //  bool? ischeck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +89,7 @@ class _MyAppState extends State<MyApp> {
           
 
 
-                      Row(
+/*                      Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:[
@@ -119,7 +101,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                           ],
                       ),
-
+*/
                         
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 35),
@@ -139,7 +121,7 @@ class _MyAppState extends State<MyApp> {
                         padding: const EdgeInsets.symmetric(horizontal: 35),
                         child: MaterialButton(
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/AboutPage');
+                            Navigator.pushNamed(context,'/AboutPage');
                           },
                           minWidth: 222.0,
                           height: 35.0,
@@ -171,7 +153,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class RememberMeCheckbox extends StatefulWidget {
+ /* class RememberMeCheckbox extends StatefulWidget {
   @override
   _RememberMeCheckboxState createState() => _RememberMeCheckboxState();
 }
@@ -198,37 +180,6 @@ class _RememberMeCheckboxState extends State<RememberMeCheckbox> {
   }
 }
 
-
-class AboutPage extends StatelessWidget {
-  final String data;
-
-  AboutPage({
-    Key ?key,
-    required this.data,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Routing App'),),
-
-      body: Center(
-        child:Column (
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(
-              'About Page',
-              style: TextStyle(fontSize: 50),
-            ),
-            Text(
-              data,
-              style: TextStyle(fontSize: 20),
-              )
-          ],
-        ),
-        )
-    );
-  }
-}
-
 */
+
+
